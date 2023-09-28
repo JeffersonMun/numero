@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operaciones con Números</title>
+</head>
+<body>
+    <h1>Operaciones con Números</h1>
+    <p>Ingrese el primer número:</p>
+    <input type="number" id="numero1">
+    <p>Ingrese el segundo número:</p>
+    <input type="number" id="numero2">
+    <button onclick="realizarOperacion()">Realizar Operación</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        function realizarOperacion() {
+            // Obtener los valores ingresados por el usuario
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+
+            // Verificar las condiciones
+            if (numero1 > numero2) {
+                // Mostrar la suma de los dos números
+                var resultado = numero1 + numero2;
+            } else if (numero2 > numero1) {
+                // Elevar al cuadrado cada número, sumarlos y mostrar el resultado
+                var resultado = Math.pow(numero1, 2) + Math.pow(numero2, 2);
+            } else {
+                // Los números son iguales
+                var resultado = "Los números son iguales";
+            }
+
+            // Mostrar el resultado en la página
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>
